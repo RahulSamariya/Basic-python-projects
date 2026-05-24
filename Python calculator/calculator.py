@@ -28,10 +28,23 @@ window.title('Calculator')
 window.resizable(False, False)
 
 frame = tk.Frame(window, bg=colour_gray_blue)
-label = tk.Label(frame, text='0', font=('Arial', 42), bg=colour_warm_blush_pink,
+label = tk.Label(frame, text='0', font=('Arial', 45), bg=colour_warm_blush_pink,
                 fg=colour_lake)
                 
+label.grid(row=0, column=0, columnspan=column_count, rowspan=1, padx=5, pady=5, sticky='nsew')
 
+for row in range(row_count):
+    for col in range(column_count): 
+        value = button_values[row][col]
+        button = tk.Button(frame, text=value, font=('Arial', 15),
+                           width=5, height=2, bg=colour_soft_stone_gray,
+                           command=lambda value=value: button_clicked(value))
+        button.grid(row=row, column=col, padx=5, pady=5  )
+
+def button_clicked(value):
+    pass
+
+frame.pack()
 window.mainloop()
 
 
