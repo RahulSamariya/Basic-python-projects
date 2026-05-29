@@ -75,7 +75,6 @@ def button_clicked(value):
     if value in right_symbols:
         pass
     elif value in top_symbols:
-        pass
         if value == 'AC':
             label.config(text='0')
             return
